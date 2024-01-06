@@ -117,22 +117,22 @@ Q:Two APs have the same common difference.The difference between their $100${th}
 
 \solution
 
-Let us assume given two APs(Arithmetic Progressions) as A and B whose first terms are given by $a(1)$ and $b(1)$. Let $d$ be the common difference of the APs. 
+Let us assume given two APs(Arithmetic Progressions) as X and Y whose first terms are given by $x(1)$ and $y(1)$. Let $d$ be the common difference of the APs. 
 \\
-We know that, $n$th term of an AP is given by $a(n) = a(1)+(n-1)d$.
+We know that, $n$th term of an AP is given by $x(n) = x(1)+(n-1)d$.
 \\
 Given that the difference between the $100$th terms is $100$.
 \begin{align}
-a(100) - b(100) &= 100 \\
-(a(1) + 99d) - (b(1) + 99d) &= 100
+x(100) - y(100) &= 100 \\
+(x(1) + 99d) - (y(1) + 99d) &= 100
 (\text{since $999d$ cancels out, the equation will be}) \\
-a(1) - b(1) &= 100
+x(1) - y(1) &= 100
 \end{align}
 Now to find the difference between the $1000$th terms of APs;
 \begin{align}
-a(1000) - b(1000) &= (a(1) + 999d) - (b(1) + 999d)
+x(1000) - y(1000) &= (x(1) + 999d) - (y(1) + 999d)
 (\text{since $999d$ cancels out, the equation will be})\\
-&= a(1) - b(1)\\
+&= x(1) - y(1)\\
 &= 100  
 (\text{from the above equation})
 \end{align}
@@ -142,20 +142,39 @@ We know that,
 
 The Z-transform of a discrete signal $x(n)$ is given by:
 \[ X(z) = \mathcal{Z}\{x(n)\} = \sum_{n=-\infty}^{\infty} x(n)z^{-n} \]
-\\ Considering a(n) and b(n) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for a(n) and b(n) can be given by
+\\ Considering x(n) and y(n) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n) and y(n) can be given by
 \begin{align}
-A(z) = \mathcal{Z}\{a(n)\} 
-&= \sum_{n=-\infty}^{\infty} a(n)z^{-n} \\
-&=\sum_{n=1}^{n}a(n)z^{-n} \\
-&=a(1)z^{-1}+a(2)z^{-2}+ \ldots +a(n)z^{-n} \\
-&=a(1)z^{-1}+(a(1)+d)z^{-2}+ \ldots +(a(1)+(n-1)d)z^{-n} \\
-&=a(1)[z^{-1} + z^{-2} + \ldots + z^{-n}] + d[1.z^{-2}+\ldots+(n-1).z^{-n}] \\
-&=a(1)\cdot U(z) + d[-z \cdot \frac{d(U(z))}{dz} - U(z)]\\
+X(z) = \mathcal{Z}\{x(n)\} 
+&= \sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
+&=\sum_{n=1}^{n}x(n)z^{-n} \\
+&=x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n)z^{-n} \\
+&=x(1)z^{-1}+(x(1)+d)z^{-2}+ \ldots +(x(1)+(n-1)d)z^{-n} \\
+&=x(1)[z^{-1} + z^{-2} + \ldots + z^{-n}] + d[1.z^{-2}+\ldots+(n-1).z^{-n}] \\
+&=x(1)\cdot U(z) + d[-z \cdot \frac{d(U(z))}{dz} - U(z)]\\
 \end{align}
-$A(z) = [a(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]  $ \\
+$X(z) = [x(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]  $ \\
 
 similarly \\
 
-$B(z) = [b(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}] $ \\
+$Y(z) = [y(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}] $ \\
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       \textbf{Variable}& \textbf{Description}& \textbf{Value}\\\hline
+         $X,Y$& Two given APs &none\\\hline
+          $x(n)$,$y(n)$& $n^{th}$ term of X, $n^{th}$ term of Y&none\\\hline
+         $n$&   position of the term in the AP&none\\\hline
+          $d$&common difference between the terms of AP&none\\\hline
+          $X(z)$& z-transform of x(n)&$[x(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]$ \\\hline
+         $Y(z)$& z-transform of y(n)&$[y(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]$\\\hline
+          $U(z)$& z-transform of u(n)& $\sum_{ n=1}^{\infty} z^{-n}$\\\hline
+         $\frac{d(U(z))}{dz}$& Derivative of U(z)&$-\sum_{n=1}^{\infty}nz^{-n-1}$\\\hline
+         
+    \end{tabular}
+    \caption{\textbf{VARIABLES AND THEIR VALUES}}
+    \label{tab:my_label}
+\end{table}
 
 \end{document}
