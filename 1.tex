@@ -119,18 +119,20 @@ Q:Two APs have the same common difference.The difference between their $100${th}
 
 Let us assume given two APs(Arithmetic Progressions) as X and Y whose first terms are given by $x(0)$ and $y(0)$. Let $d$ be the common difference of the APs. 
 \\
-We know that, $n$th term of an AP is given by $x(n) = x(0)+(n)d$.
-\\
-Given that the difference between the $100$th terms is $100$.
+We know that, 
+
+$n$th term of an AP is given by 
 \begin{align}
-x(99) - y(99) &= 100 \\
-(x(0) + 99d) - (y(0) + 99d) &= 100
+x(n) &= x(0)+[(n)d]u(n) \\
+\text{Given that the difference between the $100$th terms is $100$} \\
+\implies x(99) - y(99) &= 100 \\
+\implies (x(0) + 99d) - (y(0) + 99d) &= 100
 (\text{since $999d$ cancels out, the equation will be}) \\
-x(0) - y(0) &= 100
+\implies x(0) - y(0) &= 100
 \end{align}
 Now to find the difference between the $1000$th terms of APs;
 \begin{align}
-x(999) - y(999) &= (x(0) + 999d) - (y(0) + 999d)
+\implies x(999) - y(999) &= (x(0) + 999d) - (y(0) + 999d)
 (\text{since $999d$ cancels out, the equation will be})\\
 &= x(0) - y(0)\\
 &= 100  
@@ -142,7 +144,7 @@ We know that,
 
 The Z-transform of a discrete signal $x(n)$ is given by:
 \[ X(z) = \mathcal{Z}\{x(n)\} = \sum_{n=-\infty}^{\infty} x(n)z^{-n} \]
-\\ Considering x(n) and y(n) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n) and y(n) can be given by
+\\ Considering x(n-1) and y(n-1) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n-1) and y(n-1) can be given by
 \begin{align}
 X(z) = \mathcal{Z}\{x(n)\} 
 &= \sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
@@ -150,11 +152,8 @@ X(z) = \mathcal{Z}\{x(n)\}
 &=x(0)z^{0}+x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n-1)z^{-(n-1)} \\
 &=x(0)+(x(0)+d)z^{-1}+(x(0)+2d)z^{-2}+ \ldots +(x(0)+(n-1)d)z^{-(n-1)} \\
 &=x(0)[1+ z^{-1} + z^{-2} + \ldots + z^{-(n-1)}] + d[1.z^{-1}+2.z^{-2}+\ldots+n.z^{-(n-1)}] \\
-&=x(0)(U(z)) + d[-z \cdot \frac {d(U(z))}{dz}]
+&=x(0)(U(z)) + d[-z \cdot \frac {d(U(z))}{dz}] \\
+\implies X(z) &= x(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}   \\
+\implies Y(z) &= y(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}  \\
 \end{align}
-$X(z) = x(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}  $ \\
-
-similarly \\
-
-$Y(z) = y(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz} $ \\
 \end{document}
