@@ -1,6 +1,4 @@
-\begin{table}
-    \centering
-    \begin{tabular}{|c|c|c|c|}
+ \begin{tabular}{|c|c|c|c|}
     \hline
        \textbf{Variable}& \textbf{Description}& \textbf{Value}\\\hline
          $x(n-1)$& $n^{th}$ term of X&none\\\hline
@@ -13,6 +11,3 @@
          $\frac{d(U(z))}{dz}$& Derivative of U(z)&$-\sum_{n=1}^{\infty}nz^{-n-1}$\\\hline
          
     \end{tabular}
-    \caption{\textbf{VARIABLES AND THEIR VALUES}}
-    \label{tab:my_label}
-\end{table}
