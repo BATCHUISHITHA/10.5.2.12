@@ -117,22 +117,22 @@ Q:Two APs have the same common difference.The difference between their $100${th}
 
 \solution
 
-Let us assume given two APs(Arithmetic Progressions) as X and Y whose first terms are given by $x(1)$ and $y(1)$. Let $d$ be the common difference of the APs. 
+Let us assume given two APs(Arithmetic Progressions) as X and Y whose first terms are given by $x(0)$ and $y(0)$. Let $d$ be the common difference of the APs. 
 \\
-We know that, $n$th term of an AP is given by $x(n) = x(1)+(n-1)d$.
+We know that, $n$th term of an AP is given by $x(n) = x(0)+(n)d$.
 \\
 Given that the difference between the $100$th terms is $100$.
 \begin{align}
-x(100) - y(100) &= 100 \\
-(x(1) + 99d) - (y(1) + 99d) &= 100
+x(99) - y(99) &= 100 \\
+(x(0) + 99d) - (y(0) + 99d) &= 100
 (\text{since $999d$ cancels out, the equation will be}) \\
-x(1) - y(1) &= 100
+x(0) - y(0) &= 100
 \end{align}
 Now to find the difference between the $1000$th terms of APs;
 \begin{align}
-x(1000) - y(1000) &= (x(1) + 999d) - (y(1) + 999d)
+x(999) - y(999) &= (x(0) + 999d) - (y(0) + 999d)
 (\text{since $999d$ cancels out, the equation will be})\\
-&= x(1) - y(1)\\
+&= x(0) - y(0)\\
 &= 100  
 (\text{from the above equation})
 \end{align}
@@ -146,29 +146,29 @@ The Z-transform of a discrete signal $x(n)$ is given by:
 \begin{align}
 X(z) = \mathcal{Z}\{x(n)\} 
 &= \sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
-&=\sum_{n=1}^{n}x(n)z^{-n} \\
-&=x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n)z^{-n} \\
-&=x(1)z^{-1}+(x(1)+d)z^{-2}+ \ldots +(x(1)+(n-1)d)z^{-n} \\
-&=x(1)[z^{-1} + z^{-2} + \ldots + z^{-n}] + d[1.z^{-2}+\ldots+(n-1).z^{-n}] \\
-&=x(1)\cdot U(z) + d[-z \cdot \frac{d(U(z))}{dz} - U(z)]\\
+&=\sum_{n=0}^{n-1}x(n)z^{-n} \\
+&=x(0)z^{0}+x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n-1)z^{-(n-1)} \\
+&=x(0)+(x(0)+d)z^{-1}+(x(0)+2d)z^{-2}+ \ldots +(x(0)+(n-1)d)z^{-(n-1)} \\
+&=x(0)[1+ z^{-1} + z^{-2} + \ldots + z^{-(n-1)}] + d[1.z^{-1}+2.z^{-2}+\ldots+n.z^{-(n-1)}] \\
+&=x(0)(U(z)) + d[-z \cdot \frac {d(U(z))}{dz}]
 \end{align}
-$X(z) = [x(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]  $ \\
+$X(z) = x(0)\cdot U(z) + d\cdot{-z} \cdot \frac {d(U(z))}{dz}  $ \\
 
 similarly \\
 
-$Y(z) = [y(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}] $ \\
+$Y(z) = y(0)\cdot U(z) + d\cdot{-z} \cdot \frac {d(U(z))}{dz} $ \\
 
 \begin{table}
     \centering
     \begin{tabular}{|c|c|c|c|}
     \hline
        \textbf{Variable}& \textbf{Description}& \textbf{Value}\\\hline
-         $X,Y$& Two given APs &none\\\hline
-          $x(n)$,$y(n)$& $n^{th}$ term of X, $n^{th}$ term of Y&none\\\hline
-         $n$&   position of the term in the AP&none\\\hline
+         $x(n)$& $n^{th}$ term of X&none\\\hline
+          $y(n)$& $n^{th}$ term of Y&none\\\hline
+         $n$&   position of the term in the AP starting from 0&none\\\hline
           $d$&common difference between the terms of AP&none\\\hline
-          $X(z)$& z-transform of x(n)&$[x(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]$ \\\hline
-         $Y(z)$& z-transform of y(n)&$[y(1)-d]\cdot U(z) + d[-z \cdot \frac {d(U(z))}{dz}]$\\\hline
+          $X(z)$& z-transform of x(n)&$x(0)\cdot U(z) + d\cdot{-z} \cdot \frac {d(U(z))}{dz}$ \\\hline
+         $Y(z)$& z-transform of y(n)&$y(0)\cdot U(z) + d\cdot{-z} \cdot \frac {d(U(z))}{dz}$\\\hline
           $U(z)$& z-transform of u(n)& $\sum_{ n=1}^{\infty} z^{-n}$\\\hline
          $\frac{d(U(z))}{dz}$& Derivative of U(z)&$-\sum_{n=1}^{\infty}nz^{-n-1}$\\\hline
          

@@ -1,0 +1,21 @@
+\documentclass{article}
+\begin{document}
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       \textbf{Variable}& \textbf{Description}& \textbf{Value}\\\hline
+         $x(n)$& $n^{th}$ term of X&none\\\hline
+          $y(n)$& $n^{th}$ term of Y&none\\\hline
+         $n$&   position of the term in the AP starting from 0&none\\\hline
+          $d$&common difference between the terms of AP&none\\\hline
+          $X(z)$& z-transform of x(n)&$x(0)\cdot U(z) + d\cdot{-z} \cdot \frac {d(U(z))}{dz}$ \\\hline
+         $Y(z)$& z-transform of y(n)&$y(0)\cdot U(z) + d\cdot{-z} \cdot \frac {d(U(z))}{dz}$\\\hline
+          $U(z)$& z-transform of u(n)& $\sum_{ n=1}^{\infty} z^{-n}$\\\hline
+         $\frac{d(U(z))}{dz}$& Derivative of U(z)&$-\sum_{n=1}^{\infty}nz^{-n-1}$\\\hline
+         
+    \end{tabular}
+    \caption{\textbf{VARIABLES AND THEIR VALUES}}
+    \label{tab:my_label}
+\end{table}
+\end{document}
