@@ -1,4 +1,4 @@
- \begin{tabular}{|c|c|c|c|}
+ \begin{tabular}{|c|c|c|}
     \hline
        \textbf{Variable}& \textbf{Description}& \textbf{Value}\\\hline
          $x(n-1)$& $n^{th}$ term of X&none\\\hline
