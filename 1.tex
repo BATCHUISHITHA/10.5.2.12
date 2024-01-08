@@ -145,19 +145,24 @@ The Z-transform of a discrete signal $x(n)$ is given by:
 \\ Considering x(n-1) and y(n-1) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n-1) and y(n-1) can be given by
 \begin{align}
 X(z) = \mathcal{Z}\{x(n)\} 
-&= \sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
+&=\sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
 &=\sum_{n=0}^{n}x(n)z^{-n} \\
 &=x(0)z^{0}+x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n)z^{-(n)} \\
 &=x(0)+(x(0)+d)z^{-1}+(x(0)+2d)z^{-2}+ \ldots +(x(0)+nd)z^{-n} \\
 &=x(0)[1+ z^{-1} + z^{-2} + \ldots + z^{-n}] + d[1.z^{-1}+2.z^{-2}+\ldots+n.z^{-n}] \\
+&=x(0)[\frac{1 \cdot (z^{-(n+1)}-1) }{z^{-1}-1}] + d[\frac{1}{1-z^{-1}}+ 1\cdot\frac{z^{-1}\cdot (1-z^{n-1})}{1-z^{-1}}-n\cdot z^{n}] \\
+&=x(0)[\frac{1 \cdot (z^{-(n+1)}-1) }{z^{-1}-1}] +d[\frac{1+z^{-1}\cdot (1-z^{n-1})}{1-z^{-1}} -n\cdot z^{n}] \\
+&=\frac{x(0)\cdot (z^{-(n+1)}-1) -d \cdot (1+z^{-1}\cdot (1-z^{n-1})) }{z^{-1}-1}-n \cdot d \cdot z^{n} \\
 &=x(0)(U(z)) + d[-z \cdot \frac {d(U(z))}{dz}] \\
+Y(z)&=\frac{y(0)\cdot (z^{-(n+1)}-1) -d \cdot (1+z^{-1}\cdot (1-z^{n-1})) }{z^{-1}-1}-n \cdot d \cdot z^{n} \\
+\end{align}
+\begin{align}
 \implies X(z) &= x(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}   \\
 \implies Y(z) &= y(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}  \\
 \end{align}
 \begin{table}[!ht]
     \centering
-    
-    \input{tables/table1}
+        \input{tables/table1}
     \caption{input parameters}
     \label{tab:10_5_3_12}
 \end{table}
