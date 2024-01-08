@@ -146,10 +146,10 @@ The Z-transform of a discrete signal $x(n)$ is given by:
 \begin{align}
 X(z) = \mathcal{Z}\{x(n)\} 
 &= \sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
-&=\sum_{n=0}^{n-1}x(n)z^{-n} \\
-&=x(0)z^{0}+x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n-1)z^{-(n-1)} \\
-&=x(0)+(x(0)+d)z^{-1}+(x(0)+2d)z^{-2}+ \ldots +(x(0)+(n-1)d)z^{-(n-1)} \\
-&=x(0)[1+ z^{-1} + z^{-2} + \ldots + z^{-(n-1)}] + d[1.z^{-1}+2.z^{-2}+\ldots+n.z^{-(n-1)}] \\
+&=\sum_{n=0}^{n}x(n)z^{-n} \\
+&=x(0)z^{0}+x(1)z^{-1}+x(2)z^{-2}+ \ldots +x(n)z^{-(n)} \\
+&=x(0)+(x(0)+d)z^{-1}+(x(0)+2d)z^{-2}+ \ldots +(x(0)+(n)d)z^{-n} \\
+&=x(0)[1+ z^{-1} + z^{-2} + \ldots + z^{-n}] + d[1.z^{-1}+2.z^{-2}+\ldots+n.z^{-n}] \\
 &=x(0)(U(z)) + d[-z \cdot \frac {d(U(z))}{dz}] \\
 \implies X(z) &= x(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}   \\
 \implies Y(z) &= y(0)\cdot U(z) + d\cdot{(-z)} \cdot \frac {d(U(z))}{dz}  \\
