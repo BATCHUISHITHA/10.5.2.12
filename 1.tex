@@ -124,10 +124,9 @@ x(n) &= \{x(0)+nd\}u(n) \\
  \\
 \implies x(0) - y(0) &= 100
 \end{align}
-Now to find the difference between the $1000$th terms of APs;
+
 \begin{align}
-x(999) - y(999) &= (x(0) + 999d) - (y(0) + 999d)
-\\
+x(n) - y(n) &= (x(0) + nd) - (y(0) + nd)\\
 &= x(0) - y(0) \\
 &= 100  
 \end{align}
@@ -137,13 +136,15 @@ We know that,
 
 The Z-transform of a discrete signal $x(n)$ is given by:
 \[ X(z) = \mathcal{Z}\{x(n)\} = \sum_{n=-\infty}^{\infty} x(n)z^{-n} \]
-\\ Considering x(n-1) and y(n-1) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n-1) and y(n-1) can be given by
+\\ Considering x(n-1) and y(n-1) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n) and y(n) can be given by
 \begin{align}
 X(z) = \mathcal{Z}\{x(n)\} 
 &=\sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
+&=\sum_{n=0}^{\infty}x(n)z^{-n} \\
 &=x(0)U(z) + d[-z \frac {d(U(z))}{dz}] \\
-X(z) &= x(0)U(z) + d(-z) \frac {d(U(z))}{dz}   \\
- Y(z) &= y(0)U(z) + d(-z) \frac {d(U(z))}{dz}  
+&=\frac{x(0)}{1-z^{-1}} + \frac{dz^{-1}}{(1-z^{-1})^2} \hspace{5pt} ROC: |z|>1\\
+X(z)&= \frac{x(0)}{1-z^{-1}} + \frac{dz^{-1}}{(1-z^{-1})^2} \hspace{5pt} ROC: |z|>1\\
+Y(z)&= \frac{y(0)}{1-z^{-1}} + \frac{dz^{-1}}{(1-z^{-1})^2} \hspace{5pt} ROC: |z|>1
 \end{align}
 \begin{table}[!ht]
     \centering
@@ -153,14 +154,22 @@ X(z) &= x(0)U(z) + d(-z) \frac {d(U(z))}{dz}   \\
 \end{table}
 
 \begin{align}
-X &= \{101,106,111,...,596 \} \\
-Y &= \{1,6,11,...,496 \} 
+x(n)&= \{101,106,111,...\} \\
+y(n)&= \{1,6,11,... \} 
 \end{align}
+
+
+\begin{figure}
+    \centering
+    \includegraphics{./figs/fig2.png}
+    \caption{ }
+    \label{fig:x(n) & y(n) }
+\end{figure}
 
 \begin{figure}
     \centering
     \includegraphics{./figs/fig1.png}
     \caption{ }
-    \label{fig:difference of nth terms of X and Y }
+    \label{fig:difference of x(n) & y(n) }
 \end{figure}
 \end{document}
