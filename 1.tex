@@ -130,22 +130,7 @@ x(n) - y(n) &= (x(0) + nd) - (y(0) + nd)\\
 &= x(0) - y(0) \\
 &= 100  
 \end{align}
-Therefore,the difference between the 1000th terms of two given APs is 100.\\
 
-We know that,
-
-The Z-transform of a discrete signal $x(n)$ is given by:
-\[ X(z) = \mathcal{Z}\{x(n)\} = \sum_{n=-\infty}^{\infty} x(n)z^{-n} \]
-\\ Considering x(n-1) and y(n-1) as $n^{th}$ terms of the APs(Arithmetic Progressions), Z-transform for x(n) and y(n) can be given by
-\begin{align}
-X(z) = \mathcal{Z}\{x(n)\} 
-&=\sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
-&=\sum_{n=0}^{\infty}x(n)z^{-n} \\
-&=x(0)U(z) + d[-z \frac {d(U(z))}{dz}] \\
-&=\frac{x(0)}{1-z^{-1}} + \frac{dz^{-1}}{(1-z^{-1})^2} \hspace{5pt} ROC: |z|>1\\
-X(z)&= \frac{x(0)}{1-z^{-1}} + \frac{dz^{-1}}{(1-z^{-1})^2} \hspace{5pt} ROC: |z|>1\\
-Y(z)&= \frac{y(0)}{1-z^{-1}} + \frac{dz^{-1}}{(1-z^{-1})^2} \hspace{5pt} ROC: |z|>1
-\end{align}
 \begin{table}[!ht]
     \centering
         \input{tables/table1}
