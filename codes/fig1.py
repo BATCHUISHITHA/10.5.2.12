@@ -25,14 +25,6 @@ plt.ylabel('Values')
 plt.title('Stem Plot for $x(n)$ and $y(n)$')
 plt.legend().set_visible(False)
 
-# Plot for the constant sequence
-plt.subplot(2, 1, 2)
-plt.plot(constant_seq, label='$x(n) - y(n)$: 100, 100, ...')
-plt.stem(constant_seq, linefmt=':', markerfmt='^', basefmt=' ')
-plt.xlabel('n')
-plt.ylabel('Values')
-plt.title('Stem Plot for  difference of $x(n)$ and $y(n)$ (Constant Sequence)')
-plt.legend().set_visible(False)
 
 # Adjust layout for better spacing
 plt.tight_layout()
